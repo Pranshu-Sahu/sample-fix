@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="notif-temp-2">
+      <div class="cross">
+        <button onclick="remove('notif-temp-2')" class="temp2-cross">
+          &times;
+        </button>
+      </div>
+      <a href="https://www.google.com/">
+        <div class="right-img-div">
+          <img
+            class="notif-img"
+            src="https://picsum.photos/80"
+            alt="lorem picsum image"
+          />
+        </div>
+      </a>
+    </div>
+    <style>
+      .body {
+        overflow: hidden;
+        font-family: "Inter", sans-serif;
+        min-height: 100vh;
+      }
+
+      .notif-temp-2 {
+        margin: auto;
+        font-family: "Inter", sans-serif;
+        width: 50%;
+        gap: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 10px;
+        padding: 0px 20px;
+      }
+      .right-img-div {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 5px solid purple;
+        padding: 10px;
+        border-radius: 50%;
+      }
+      .right-img-div::after {
+        content: "1";
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        background-color: red;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .notif-img {
+        border-radius: 50%;
+      }
+      .notif2-seeMore {
+        margin-top: 8px;
+        color: white;
+        font-size: 14px;
+        text-decoration: none;
+      }
+      .temp2-cross {
+        position: absolute;
+        top: -10px;
+        right: 10px;
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+      }
+      @media (min-width: 768px) {
+        .notif1 {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          width: 400px;
+        }
+        .notif1::after {
+          z-index: 100;
+          top: -10px;
+          right: -10px;
+        }
+
+        .notif-temp-2 {
+          width: 600px;
+        }
+        .notif-temp-2,
+        .notif3 {
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+        }
+      }
+    </style>
+    <script>
+      function remove(id) {
+        console.log(id);
+        const element = document.querySelector(`.${id}`);
+        console.log(element);
+        element.remove();
+      }
+    </script>
+  </body>
+</html>
